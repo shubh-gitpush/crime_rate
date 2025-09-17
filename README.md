@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Crime Rate Prediction and Safety Analysis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <h2>🚨 Real-time Crime Risk Assessment System 🚨</h2>
+  <p>A machine learning-powered application to analyze and predict crime risk levels across India</p>
+</div>
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Real-time Risk Assessment**: Get instant safety scores for any location
+- **Time-based Analysis**: Risk levels adjusted based on time of day
+- **District & State Level Data**: Detailed analysis at both district and state levels
+- **Smart Recommendations**: Contextual safety tips based on location and time
+- **Interactive Map Interface**: Visual representation of safety levels
 
-### `npm start`
+## 🚀 Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v14 or higher)
+- Python 3.8+
+- Git
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+<summary>Frontend Setup</summary>
 
-### `npm run build`
+```bash
+# Navigate to frontend directory
+cd frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Install dependencies
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Start development server
+npm start
+```
+- Access the application at [http://localhost:3000](http://localhost:3000)
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
+<summary>Backend Setup</summary>
 
-### `npm run eject`
+```bash
+# Navigate to backend directory
+cd backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Start the server
+uvicorn app:app --reload
+```
+- API will be available at [http://localhost:8000](http://localhost:8000)
+</details>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔧 Available Scripts
 
-## Learn More
+### Frontend Commands
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs development server |
+| `npm test` | Launches test runner |
+| `npm run build` | Builds for production |
+| `npm run eject` | Ejects CRA configuration |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Backend Commands
 
-### Code Splitting
+| Command | Description |
+|---------|-------------|
+| `uvicorn app:app --reload` | Starts development server |
+| `python -m pytest` | Runs tests |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📚 Technical Details
 
-### Analyzing the Bundle Size
+### Frontend
+- Built with React.js
+- Material-UI for components
+- Leaflet for maps
+- Axios for API calls
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Backend
+- FastAPI framework
+- Scikit-learn for ML models
+- Pandas for data processing
+- Crime data analysis with customized algorithms
 
-### Making a Progressive Web App
+## 💡 Key Features Explained
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Risk Assessment Algorithm
+- Analyzes historical crime data
+- Considers multiple crime types with weighted severity
+- Adjusts for population density
+- Time-based risk modulation
+- District and state-level comparisons
 
-### Advanced Configuration
+### Safety Recommendations
+- Context-aware suggestions
+- Time-based safety tips
+- Location-specific precautions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## 🙏 Acknowledgments
+
+- National Crime Records Bureau (NCRB) for data
+- React team for Create React App
+- FastAPI team for the backend framework
+
+
+<div align="center">
+  <p>Made with ❤️ for a safer tomorrow</p>
+</div>
