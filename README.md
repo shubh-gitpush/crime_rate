@@ -1,118 +1,75 @@
-# Crime Rate Prediction and Safety Analysis
+<h1 align="center">📊 Crime Risk Scoring System</h1>
 
-<div align="center">
-  <h2>🚨 Real-time Crime Risk Assessment System 🚨</h2>
-  <p>A machine learning-powered application to analyze and predict crime risk levels across India</p>
-</div>
+<p align="center">
+  <b>A machine learning project to analyze district-wise crime data (2010–2020) and classify regions into risk levels 🚨</b>
+</p>
 
-## 🌟 Features
+---
 
-- **Real-time Risk Assessment**: Get instant safety scores for any location
-- **Time-based Analysis**: Risk levels adjusted based on time of day
-- **District & State Level Data**: Detailed analysis at both district and state levels
-- **Smart Recommendations**: Contextual safety tips based on location and time
-- **Interactive Map Interface**: Visual representation of safety levels
+<h2>📌 About the Project</h2>
 
-## 🚀 Getting Started
+This project analyzes **crime data across Indian districts** and assigns a **risk score** based on different types of crimes.  
+The workflow includes:
+- Collecting raw district-wise crime data (2010–2020) 🗂️
+- Assigning **weights** to different crime categories (e.g., murder > theft) ⚖️
+- Normalizing by population → **per capita crime** 📐
+- Scaling by **median values** for comparability 📊
+- Computing **risk scores** for each district
+- Training a **Logistic Regression Model** to classify into risk levels (0 = Safe → 4 = Very High Risk)
 
-### Prerequisites
+---
 
-- Node.js (v14 or higher)
-- Python 3.8+
-- Git
+<h2>🛠️ Tech Stack</h2>
 
-### Installation
+<ul>
+  <li><b>Python</b> 🐍 – Data analysis & ML</li>
+  <li><b>Pandas</b> – Data processing</li>
+  <li><b>NumPy</b> – Numerical operations</li>
+  <li><b>Matplotlib / Seaborn</b> – Visualization</li>
+  <li><b>Scikit-learn</b> – ML model (Logistic Regression)</li>
+</ul>
 
-<details>
-<summary>Frontend Setup</summary>
+---
+
+<h2>📂 Dataset</h2>
+
+- Source: <i>District-wise crimes committed (IPC), India (2010–2020)</i>  
+- Data contains:
+  - Yearly district-wise crime counts
+  - Population data
+  - Features created:
+    - Per capita crime rates
+    - Weighted scores based on severity
+- Files are stored in: <code>data/</code> 📁
+
+---
+
+<h2>🤖 Machine Learning Model</h2>
+
+- Model used: **Logistic Regression**  
+- Why Logistic Regression?
+  - ✅ Simple & interpretable
+  - ✅ Handles categorical risk levels (0–4)
+  - ✅ Easy to explain coefficients
+- Why not SVM / Random Forest?
+  - ❌ SVM → better for complex, non-linear data, harder to train, not multinomial by default  
+  - ❌ Random Forest → powerful but computationally heavy & less interpretable  
+
+---
+
+<h2>⚡ How to Run</h2>
 
 ```bash
-# Navigate to frontend directory
-cd frontend
+# Clone the repository
+git clone https://github.com/your-username/crime-risk-scoring.git
+cd crime-risk-scoring
+
+# Create virtual environment (optional)
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
 
 # Install dependencies
-npm install
+pip install -r requirements.txt
 
-# Start development server
-npm start
-```
-- Access the application at [http://localhost:3000](http://localhost:3000)
-</details>
-
-<details>
-<summary>Backend Setup</summary>
-
-```bash
-# Navigate to backend directory
-cd backend
-
-
-
-# Start the server
-uvicorn app:app --reload
-```
-- API will be available at [http://localhost:8000](http://localhost:8000)
-</details>
-
-## 🔧 Available Scripts
-
-### Frontend Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm start` | Runs development server |
-| `npm test` | Launches test runner |
-| `npm run build` | Builds for production |
-| `npm run eject` | Ejects CRA configuration |
-
-### Backend Commands
-
-| Command | Description |
-|---------|-------------|
-| `uvicorn app:app --reload` | Starts development server |
-| `python -m pytest` | Runs tests |
-
-## 📚 Technical Details
-
-### Frontend
-- Built with React.js
-- Material-UI for components
-- Leaflet for maps
-- Axios for API calls
-
-### Backend
-- FastAPI framework
-- Scikit-learn for ML models
-- Pandas for data processing
-- Crime data analysis with customized algorithms
-
-## 💡 Key Features Explained
-
-### Risk Assessment Algorithm
-- Analyzes historical crime data
-- Considers multiple crime types with weighted severity
-- Adjusts for population density
-- Time-based risk modulation
-- District and state-level comparisons
-
-### Safety Recommendations
-- Context-aware suggestions
-- Time-based safety tips
-- Location-specific precautions
-
-
-
-
-
-
-
-## 🙏 Acknowledgments
-
-- National Crime Records Bureau (NCRB) for data
-- React team for Create React App
-- FastAPI team for the backend framework
-
-
-<div align="center">
-  <p>Made with ❤️ for a safer tomorrow</p>
-</div>
+# Run the notebook / script
+jupyter notebook analysis.ipynb
